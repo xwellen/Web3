@@ -19,7 +19,7 @@ public class XConverter implements Converter {
         }
         throw new ConverterException(new FacesMessage(FacesMessage.SEVERITY_ERROR,
                 "Error: ",
-                "Shit convert"));
+                "Введите число"));
     }
 
     @Override

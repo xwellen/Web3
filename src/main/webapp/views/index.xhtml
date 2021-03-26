@@ -7,39 +7,42 @@
       xmlns:p="http://primefaces.org/ui" xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
-    <title>Lab Three</title>
-    <!--    Fucking order scripts fix starts-->
+    <title>Web3</title>
     <f:facet name="first">
         <h:outputScript library="primefaces" name="jquery/jquery.js"/>
         <h:outputScript library="primefaces" name="jquery/jquery-plugins.js"/>
         <h:outputScript library="primefaces" name="core.js"/>
         <h:outputScript library="primefaces" name="components.js"/>
     </f:facet>
-    <!--    Fucking order scripts fix ends-->
-    <h:outputStylesheet library="css" name="start_page.css"/>
+    <h:outputStylesheet library="css" name="style.css"/>
 </h:head>
 
 <h:body>
     <h:panelGroup layout="block" styleClass="wrapper">
         <h:panelGroup layout="block" styleClass="content">
-            <ui:include src="header.xhtml"/>
-            <h:panelGroup layout="block" styleClass="main_content">
+            <h:panelGroup layout="block" styleClass="head">
+                <h:panelGroup layout="block" styleClass="inherit-wrap">
+                    Лабораторная работа №3<br/>
+                </h:panelGroup>
+                <p>Убоженко Сергей Дмитриевич</p>
+                <p>Вариант 53476</p>
+            </h:panelGroup>
+            <h:panelGroup layout="block" styleClass="stage">
                 <h1><h:link value="Главная страница" outcome="to_main_page"/></h1>
-                <h:panelGroup layout="block" styleClass="content_row">
-                    <h:panelGroup layout="block" styleClass="column">
+                <h:panelGroup styleClass="clock-wrap">
+                    <h:panelGroup layout="block" styleClass="clock">
                         <h:form>
                             <p:remoteCommand name="dateUpdater" update="clock"/>
                         </h:form>
                         <h:panelGroup layout="block" id="clock" styleClass="clock_block">
                                 <p class="date_style">Текущая дата: <h:outputText value="#{dateBean.currentDate}"/></p>
                                 <p class="date_style">Текущее время: <h:outputText value="#{dateBean.currentTime}"/></p>
-                            </h:panelGroup>
                         </h:panelGroup>
                     </h:panelGroup>
                 </h:panelGroup>
             </h:panelGroup>
-
         </h:panelGroup>
+    </h:panelGroup>
     <h:outputScript library="js" name="updateDate.js"/>
 </h:body>
 </html>

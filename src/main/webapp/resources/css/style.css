@@ -1,0 +1,146 @@
+body {
+    padding: 0 20px 20px 20px;
+    background-color: #f6e8ea;
+}
+
+.head {
+    padding: 10px 10px 10px 10px;
+    background-color: #084b83;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: white;
+    border-radius: 2px;
+}
+
+
+.inherit-wrap {
+    padding: 20px;
+    border: 1px;
+    border-style: solid;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+}
+
+.clock {
+    border: 1px solid black;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+    padding: 10px 0 10px 0;
+    width: 300px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.stage {
+    margin: 0 20px 20px 0;
+    text-align: center;
+}
+
+.ChangeX table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.ChangeX td {
+    padding: 2px 2px 2px 2px;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+table.ChangeX td {
+    width: 20px;
+}
+
+.ChangeYText{
+    width: 200px;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.r_select{
+    width: 200px;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.send_button{
+    height: 40px;
+    width: 150px;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 10px;
+}
+
+.send_button:hover{
+    background-color: #aa7dce;
+}
+
+.resultTable {
+    padding-top: 10px;
+    margin: auto;
+    width: 50%;
+}
+
+.resultTable table, th, td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.resultTable table {
+    width: 100%;
+}
+
+.resultTable th{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.hid {
+    display: none;
+}
+
+canvas {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    background-color: #f6e8ea;
+    border-radius: 40px;
+    border: 1px solid black;
+}
+
+.ChangeX a {
+    color: black;
+    text-decoration: none;
+}
+
+.ChangeX td:hover {
+    background-color: darkcyan;
+}
+
+.result_table table {
+    margin: auto;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.result_table table th, td {
+    padding: 2px 20px;
+}
+
+.result_table table th {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-style: italic;
+    font-size: 22px;
+    font-family: Helvetica, sans-serif;
+}
+
+table.ChangeX {
+    margin: auto;
+}
+
+.send_form {
+    margin-top: 20px;
+}

@@ -14,4 +14,8 @@ public class DateBean implements Serializable {
         return new SimpleDateFormat("dd.MM.yyyy").format(new Date());
 
     }
+
+    public void nullMethod(){
+        //me do nothing... just refresh view for messages
+    }
 }

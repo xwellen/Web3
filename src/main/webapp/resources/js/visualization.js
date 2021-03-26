@@ -11,8 +11,8 @@ const MAX_AXE_LENGTH = 12;
 const MAX_MARK_COORDINATE = canvas.width - (AXES_PADDING + canvas.width / MAX_AXE_LENGTH),
     MIN_MARK_COORDINATE = (AXES_PADDING + canvas.width / MAX_AXE_LENGTH);
 
-const AREAS_COLOR = "rgba(255,146,0,0.85)",
-    AXES_COLOR = "white";
+const AREAS_COLOR = "#084b83",
+    AXES_COLOR = "black";
 
 function repaint() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);

@@ -8,14 +8,14 @@ import java.util.Date;
 @Table(name = "points")
 public class Point {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "x", nullable = false)
     private Double x;
     @Column(name = "y", nullable = false)
     private Double y;
     @Column(name = "r", nullable = false)
-    private int r;
+    private Double r;
     @Column(name = "result", nullable = false)
     private String result;
     @Column(name = "time", nullable = false)
@@ -24,7 +24,7 @@ public class Point {
     public Point() {
     }
 
-    public Point(Double x, Double y, int r) {
+    public Point(Double x, Double y, Double r) {
         this.x = x;
         this.y = y;
         this.r = r;
@@ -72,11 +72,11 @@ public class Point {
         this.y = y;
     }
 
-    public int getR() {
+    public Double getR() {
         return r;
     }
 
-    public void setR(int r) {
+    public void setR(Double r) {
         this.r = r;
     }
 

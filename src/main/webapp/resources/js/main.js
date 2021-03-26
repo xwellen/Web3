@@ -18,8 +18,7 @@ class Point {
 }
 
 window.onload = function () {
-    xSelected.value = "";
-    ySelected.value = 0;
+    xSelected.value = "0";
     rSelector.value = 1;
     window['getPointsForCanvas']();
 };
@@ -43,4 +42,9 @@ function addPointCallback(xhr, status, args) {
     } else if (args.validationFailed) {
         xSelected.classList.add('input_err');
     }
+}
+
+function whatX(value){
+    document.getElementById('frm:x_selected').value = value;
+    document.getElementById('frm:whatX').innerHTML='X: ' + value;
 }

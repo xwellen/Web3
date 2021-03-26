@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class PointBean implements Serializable {
     private Double inputX;
     private Double inputY;
-    private Integer inputR;
+    private Double inputR;
 
     private PointsBean points;
     private PointDao pointDao;
@@ -41,11 +41,11 @@ public class PointBean implements Serializable {
         this.inputY = inputY;
     }
 
-    public Integer getInputR() {
+    public Double getInputR() {
         return inputR;
     }
 
-    public void setInputR(Integer inputR) {
+    public void setInputR(Double inputR) {
         this.inputR = inputR;
     }
 

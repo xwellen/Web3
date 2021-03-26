@@ -10,7 +10,7 @@
 
 
 <h:head>
-    <title>Lab Three - 0сновная страница</title>
+    <title>Web3</title>
 
     <f:facet name="first">
         <h:outputScript library="primefaces" name="jquery/jquery.js"/>
@@ -19,11 +19,11 @@
         <h:outputScript library="primefaces" name="components.js"/>
     </f:facet>
 
-    <h:outputStylesheet library="css" name="main_page.css"/>
+    <h:outputStylesheet library="css" name="style.css"/>
 </h:head>
 
 <h:body>
-    <h:panelGroup layout="block" styleClass="main_content">
+    <h:panelGroup layout="block" styleClass="stage">
         <h2><h:link value="Назад" outcome="to_start_page"/></h2>
 
         <h:panelGroup layout="block" styleClass="content_row">
@@ -45,45 +45,63 @@
 
                 <h:form class="send_form" id="frm">
                     <h:panelGroup layout="block" styleClass="x_block coordinate_block">
-                        <h:outputLabel value="X: "/>
+                        <h:outputLabel value="X: 0" id="whatX"/>
+                        <table class="ChangeX">
+                            <tr>
+                                <td>
+                                    <h:commandLink onmousedown="whatX('-5')">-5  </h:commandLink>
+                                </td>
+                                <td>
+                                    <h:commandLink onmousedown="whatX('-4')">-4  </h:commandLink>
+                                </td>
+                                <td>
+                                    <h:commandLink onmousedown="whatX('-3')">-3  </h:commandLink>
+                                </td>
+                                <td>
+                                    <h:commandLink onmousedown="whatX('-2')">-2  </h:commandLink>
+                                </td>
+                                <td>
+                                    <h:commandLink onmousedown="whatX('-1')">-1  </h:commandLink>
+                                </td>
+                                <td>
+                                    <h:commandLink onmousedown="whatX('0')">0  </h:commandLink>
+                                </td>
+                                <td>
+                                    <h:commandLink onmousedown="whatX('1')">1  </h:commandLink>
+                                </td>
+                                <td>
+                                    <h:commandLink onmousedown="whatX('2')">2  </h:commandLink>
+                                </td>
+                                <td>
+                                    <h:commandLink onmousedown="whatX('3')">3  </h:commandLink>
+                                </td>
+                            </tr>
+                        </table>
 
-                        <h:commandLink onmousedown="document.getElementById('frm:x_selected').value='-5'">-5  </h:commandLink>
-                        <h:commandLink onmousedown="document.getElementById('frm:x_selected').value='-4'">-4  </h:commandLink>
-                        <h:commandLink onmousedown="document.getElementById('frm:x_selected').value='-3'">-3  </h:commandLink>
-                        <h:commandLink onmousedown="document.getElementById('frm:x_selected').value='-2'">-2  </h:commandLink>
-                        <h:commandLink onmousedown="document.getElementById('frm:x_selected').value='-1'">-1  </h:commandLink>
-                        <h:commandLink onmousedown="document.getElementById('frm:x_selected').value='0'">0  </h:commandLink>
-                        <h:commandLink onmousedown="document.getElementById('frm:x_selected').value='1'">1  </h:commandLink>
-                        <h:commandLink onmousedown="document.getElementById('frm:x_selected').value='2'">2  </h:commandLink>
-                        <h:commandLink onmousedown="document.getElementById('frm:x_selected').value='3'">3  </h:commandLink>
 
 
                         <h:inputText id="x_selected" styleClass="x_select" value="#{pointBean.inputX}" maxlength="6"
                                      a:placeholder="Число в диапазоне (-3; 5)" autocomplete="off" style="display: none">
-<!--                            <f:converter converterId="xConverter"/>-->
-<!--                            <f:validator validatorId="xValidator"/>-->
                         </h:inputText>
                     </h:panelGroup>
                     <h:panelGroup id="sliderr" layout="block" styleClass="y_block coordinate_block">
-                        <h:outputLabel value="Y: "/>
-                        <h:inputText id="y_selected" styleClass="y_select" value="#{pointBean.inputY}" maxlength="6"
+                        <h:outputLabel value="Y:"/><br/>
+                        <h:inputText id="y_selected" styleClass="ChangeYText" value="#{pointBean.inputY}" maxlength="6"
                                      a:placeholder="Введите Y -3..3" autocomplete="off">
                                                         <f:converter converterId="xConverter"/>
                                                         <f:validator validatorId="xValidator"/>
                         </h:inputText>
+                        <br />
+                        <h:message for="y_selected" style="color: red" />
                         <h:panelGroup styleClass="hid">
                             <ace:sliderEntry id="y_slider" length="300px" axis="x" min="-40" max="40" stepPercent="1.25"
                                                                         clickableRail="false" styleClass="y_select"/>
                         </h:panelGroup>
 
-<!--                        <h:inputHidden id="y_selected" value="#{pointBean.inputY}"/>-->
-<!--                        <h:panelGroup layout="block" styleClass="y_output">-->
-<!--                            <h:outputText id="y_outText" value="0.0"/>-->
-<!--                        </h:panelGroup>-->
                     </h:panelGroup>
 
                     <h:panelGroup layout="block" styleClass="r_block coordinate_block">
-                        <h:outputLabel value="R: "/>
+                        <h:outputLabel value="R:"/><br/>
                         <h:selectOneMenu styleClass="r_select" value="#{pointBean.inputR}" id="r_select">
                             <f:selectItem itemLabel="1" itemValue="1"/>
                             <f:selectItem itemLabel="1.5" itemValue="1.5"/>
@@ -94,8 +112,9 @@
                     </h:panelGroup>
                     <h:panelGroup layout="block" styleClass="send_button_block">
                         <h:panelGroup layout="block">
-                            <h:commandButton type="button" value="Отправить" onclick="formSend()"
-                                             styleClass="send_button" validateClient="true"/>
+                            <h:commandLink value="" id="hiddenButton" styleClass="hid" action="#{dateBean.nullMethod}"/>
+                            <h:commandButton type="button" value="Отправить" onclick="formSend()" onmousedown="document.getElementById('frm:hiddenButton').click()"
+                                             styleClass="send_button" validateClient="true" />
                             <p:remoteCommand name="formSend" update="result_table" action="#{pointBean.addPoint}"
                                              validateClient="true" oncomplete="addPointCallback(xhr, status, args)"/>
                         </h:panelGroup>

@@ -19,18 +19,18 @@ public class XValidator implements Validator, ClientValidator {
             if (value.toString().isEmpty() || value.toString().length() > 6) {
                 throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR,
                         "Error: ",
-                        "Shit length"));
+                        "Допустимая длина 6 символов"));
             }
             double xValue = (double) value;
             if (xValue < -3 || xValue > 3) {
                 throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR,
                         "Error: ",
-                        "Shit range"));
+                        "Допустимые значения -3..3"));
             }
         } catch (NullPointerException | NumberFormatException e) {
             throw new ValidatorException(new FacesMessage(FacesMessage.SEVERITY_ERROR,
                     "Error: ",
-                    "Shit data"));
+                    "Введите число"));
         }
     }
 
